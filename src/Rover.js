@@ -30,8 +30,20 @@ class Rover {
     compass.reverse();
   }
 
+  moveForward() {
+    this.y += 1;
+  }
+
   getDirection() {
     return this.direction;
+  }
+
+  getY() {
+    return this.y;
+  }
+
+  getX() {
+    return this.x;
   }
 }
 

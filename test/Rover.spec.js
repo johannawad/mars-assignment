@@ -30,4 +30,21 @@ describe("Rover", () => {
       expect(rover.getDirection()).to.eq(expected);
     });
   });
+
+  const moveForwardTests = [
+    {
+      args: { x: 4, y: 7, direction: Direction.North },
+      expected: { y: 8, x: 4 },
+    },
+  ];
+  moveForwardTests.forEach(({ args, expected }) => {
+    it(`moves forward when facing the ${args.direction}`, () => {
+      const { x, y, direction } = args;
+
+      const rover = new Rover(x, y, direction);
+      rover.moveForward();
+      expect(rover.getY()).to.eq(expected.y);
+      expect(rover.getX()).to.eq(expected.x);
+    });
+  });
 });
